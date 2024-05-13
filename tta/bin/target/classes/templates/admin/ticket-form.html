@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        
+    <!-- Include TinyMCE library -->
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>    
+
+    <title>Save Ticket</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h3>List of Tickets</h3>
+        <hr>
+
+        <p class="h4 mb-4">Create Ticket</p>
+
+        <form action="#" th:action="@{/admin/save}" th:object="${ticket}" method="POST">
+
+            <!-- Add hidden form field to handle update -->
+            <input type="hidden" th:field="*{id}" />
+
+            <input type="text" th:field="*{title}" class="form-control mb-4 col-4" placeholder="Title">
+
+            <input type="text" th:field="*{description}" class="form-control mb-4 col-4" placeholder="Short Description">
+
+            <input type="text" th:field="*{content}" class="form-control mb-4 co l-4" placeholder="Content">
+
+            <button type="submit" class="btn btn-info col-2">Submit</button>
+
+        </form>
+
+
+    </div>
+</body>
+
+</html>
